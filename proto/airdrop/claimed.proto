@@ -1,0 +1,13 @@
+syntax = "proto3";
+package astranetwork.airdrop;
+
+// this line is used by starport scaffolding # proto/tx/import
+
+option go_package = "AstraNetwork/x/airdrop/types";
+
+
+message Claimed {
+  string creator = 1;
+  uint64 id = 2;
+  string amount = 3; 
+}

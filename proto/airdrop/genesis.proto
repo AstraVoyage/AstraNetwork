@@ -1,0 +1,14 @@
+syntax = "proto3";
+package astranetwork.airdrop;
+
+import "gogoproto/gogo.proto";
+import "airdrop/params.proto";
+// this line is used by starport scaffolding # genesis/proto/import
+
+option go_package = "AstraNetwork/x/airdrop/types";
+
+// GenesisState defines the airdrop module's genesis state.
+message GenesisState {
+  Params params = 1 [(gogoproto.nullable) = false];
+  // this line is used by starport scaffolding # genesis/proto/state
+}

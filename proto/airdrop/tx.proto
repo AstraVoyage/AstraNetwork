@@ -1,0 +1,23 @@
+syntax = "proto3";
+package astranetwork.airdrop;
+
+// this line is used by starport scaffolding # proto/tx/import
+
+option go_package = "AstraNetwork/x/airdrop/types";
+
+// Msg defines the Msg service.
+service Msg {
+      rpc ClaimAirdrop(MsgClaimAirdrop) returns (MsgClaimAirdropResponse);
+// this line is used by starport scaffolding # proto/tx/rpc
+}
+
+message MsgClaimAirdrop {
+  string creator = 1;
+  string amount = 2;
+}
+
+message MsgClaimAirdropResponse {
+    uint64 id = 1;
+}
+
+// this line is used by starport scaffolding # proto/tx/message

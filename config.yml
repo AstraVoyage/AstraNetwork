@@ -1,0 +1,33 @@
+accounts:
+  - name: alice
+    coins: [ "2000000000astra" ]
+  - name: bob
+    coins: [ "1000000000astra" ]
+validator:
+  name: alice
+  staked: "100000000astra"
+client:
+  openapi:
+    path: "docs/static/openapi.yml"
+  vuex:
+    path: "vue/src/store"
+genesis:
+  chain_id: "astra-network"
+  app_state:
+    staking:
+      params:
+        bond_denom: "astra"
+    mint:
+      params:
+        mint_denom: "astra"
+    gov:
+      deposit_params:
+        min_deposit:
+          amount: '100000000'
+          denom: "astra"
+    crisis:
+      constant_fee:
+        denom: "astra"
+faucet:
+  name: bob
+  coins: [ "5astra" ]
