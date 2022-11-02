@@ -12,13 +12,13 @@ func (k msgServer) ClaimAirdrop(goCtx context.Context, msg *types.MsgClaimAirdro
 	ctx := sdk.UnwrapSDKContext(goCtx)
 
 	// Genesis address sending tokens to airdrop
-	airdropSender, _ := sdk.AccAddressFromBech32("astra1z6y5ld64g6gj37e685zvlssz39xlwjukw24fpl")
+	airdropSender, _ := sdk.AccAddressFromBech32("astra1nr64qw3axn6ankrq7fpx2qe87hz9gmlhf0qukq")
 
 	// Address from Keplr sign on user
 	airdropRecipient, _ := sdk.AccAddressFromBech32(msg.Creator)
 
 	// Airdrop value to be sent
-	airdropValue := sdk.Coins{sdk.NewInt64Coin("stake", 7777)}
+	airdropValue := sdk.Coins{sdk.NewInt64Coin("astra", 7777)}
 
 	// Send Airdrop value to Keplr sign on user
 	err := k.bankKeeper.SendCoins(ctx, airdropSender, airdropRecipient, airdropValue)
