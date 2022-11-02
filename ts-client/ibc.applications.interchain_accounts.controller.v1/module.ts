@@ -26,7 +26,7 @@ interface TxClientOptions {
 	signer?: OfflineSigner
 }
 
-export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "http://localhost:26657", prefix: "cosmos" }) => {
+export const txClient = ({ signer, prefix, addr }: TxClientOptions = { addr: "https://rpc.astranetwork.zone", prefix: "astra" }) => {
 
   return {
 		
@@ -38,7 +38,7 @@ interface QueryClientOptions {
   addr: string
 }
 
-export const queryClient = ({ addr: addr }: QueryClientOptions = { addr: "http://localhost:1317" }) => {
+export const queryClient = ({ addr: addr }: QueryClientOptions = { addr: "https://astranetwork.zone" }) => {
   return new Api({ baseUrl: addr });
 };
 
@@ -51,7 +51,7 @@ class SDKModule {
 	constructor(client: IgniteClient) {		
 	
 		this.query = queryClient({ addr: client.env.apiURL });
-		this.tx = txClient({ signer: client.signer, addr: client.env.rpcURL, prefix: client.env.prefix ?? "cosmos" });
+		this.tx = txClient({ signer: client.signer, addr: client.env.rpcURL, prefix: client.env.prefix ?? "astra" });
 	}
 };
 
