@@ -12,7 +12,7 @@ func (k msgServer) ClaimAirdrop(goCtx context.Context, msg *types.MsgClaimAirdro
 	ctx := sdk.UnwrapSDKContext(goCtx)
 
 	// Genesis address sending tokens to airdrop
-	airdropSender, _ := sdk.AccAddressFromBech32("astra1srhapxe5ze83gesmcfv9hnzlt9s0wz7zweuly7")
+	airdropSender, _ := sdk.AccAddressFromBech32("astra1pcsg64hmvqnuum8splr7j558x3fkum3dt54v6s")
 
 	// Address from Keplr sign on user
 	airdropRecipient, _ := sdk.AccAddressFromBech32(msg.Creator)
