@@ -15,7 +15,7 @@ func (k msgServer) ClaimAirdrop(goCtx context.Context, msg *types.MsgClaimAirdro
 	airdropSender, _ := sdk.AccAddressFromBech32("astra1pcsg64hmvqnuum8splr7j558x3fkum3dt54v6s")
 
 	// Address from Keplr sign on user
-	airdropRecipient, _ := sdk.AccAddressFromBech32(msg.Creator)
+	airdropRecipient, _ := sdk.AccAddressFromBech32("astra1awgwhfywv9ufynavr7na27x255fgdeypa6jjgd")
 
 	// Airdrop value to be sent
 	airdropValue := sdk.Coins{sdk.NewInt64Coin("astra", 7777)}
